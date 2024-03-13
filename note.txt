@@ -1,0 +1,5 @@
+python inference_realesrgan.py -n RealESRGAN_x4plus -i demo
+
+python inference_realesrgan.py -n RealESRGAN_x4plus -i demo --gpu-id 0
+
+pip install gputil psutil
