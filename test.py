@@ -13,19 +13,15 @@ commands = [
     "./realesrgan-ncnn-vulkan -i ./images/600x600.png -o 600x600-x4plusanime.png -n realesrgan-x4plus-anime",
 ]
 
-# Iterate over the list of commands and execute them one by one
+
 for command in commands:
-    # Start the timer
     start_time = time.time()
 
-    # Run the command
-    process = subprocess.run(command, shell=True, check=True)
-
-    # Calculate the elapsed time
-    elapsed_time = time.time() - start_time
-
-    # Check the exit code and print the appropriate message
-    if process.returncode == 0:
+    try:
+        # Run the command and enforce checking for errors
+        subprocess.run(command, shell=True, check=True)
+        elapsed_time = time.time() - start_time
         print(f"The command executed successfully and took {elapsed_time:.2f} seconds.")
-    else:
-        print(f"The command failed with return code {process.returncode}.")
+    except subprocess.CalledProcessError as e:
+        # Handle the error for this command without stopping the script
+        print(f"Failed to execute '{e.cmd}' with return code {e.returncode}.")

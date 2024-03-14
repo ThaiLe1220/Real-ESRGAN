@@ -10,6 +10,10 @@ chmod +x realesrgan-ncnn-vulkan -i 600x600.png -o 600x600-output.png -n realesrn
 sudo apt update
 sudo apt upgrade -y
 
+sudo apt install libvulkan1 libvulkan-dev vulkan-utils
+
+sudo apt install libvulkan1 libvulkan-dev vulkan-tools
+
 sudo apt install -y software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
