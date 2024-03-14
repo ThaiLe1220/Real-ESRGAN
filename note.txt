@@ -3,23 +3,20 @@ python inference_realesrgan.py -n RealESRGAN_x4plus -i demo
 python inference_realesrgan.py -n RealESRGAN_x4plus -i demo --gpu-id 0
 
 ./realesrgan-ncnn-vulkan -i input.jpg -o output.png -n realesr-animevideov3
-pip install gputil psutil
 
 chmod +x realesrgan-ncnn-vulkan -i 600x600.png -o 600x600-output.png -n realesrnet-x4plus
 
 sudo apt update
 sudo apt upgrade -y
-
-sudo apt install libvulkan1 libvulkan-dev vulkan-utils
-
 sudo apt install libvulkan1 libvulkan-dev vulkan-tools
-
 sudo apt install -y software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
+
+
 sudo apt install -y python3.10
 python3.10 --version
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10
 sudo update-alternatives --config python
 sudo apt install -y python3-pip
 
@@ -29,3 +26,10 @@ git config --global user.email "lehongthai2000@gmail.com"
 git config --list
 
 git clone https://github.com/ThaiLe1220/Real-ESRGAN
+
+pip install basicsr
+pip install facexlib
+pip install gfpgan
+pip install -r requirements.txt
+pip install gputil psutil
+python setup.py develop
