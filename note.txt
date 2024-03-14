@@ -2,8 +2,9 @@ python inference_realesrgan.py -n RealESRGAN_x4plus -i demo
 
 python inference_realesrgan.py -n RealESRGAN_x4plus -i demo --gpu-id 0
 
+./realesrgan-ncnn-vulkan -i input.jpg -o output.png -n realesr-animevideov3
 pip install gputil psutil
-`
+
 chmod +x realesrgan-ncnn-vulkan -i 600x600.png -o 600x600-output.png -n realesrnet-x4plus
 
 sudo apt update
